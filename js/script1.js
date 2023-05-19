@@ -1,18 +1,17 @@
-//const playerOneInputField=document.querySelector('#playerOneInputField')
+const btnOne= document.querySelector('#playerOneBtn');
+let playerNum=[];
+console.log(btnOne);
 
-//console.log(playerOneBtn)
-//const error=document.querySelector('#error');
-//const  playerOneDiv=document.querySelector('.playerOneDiv');
-//const  playerTwoDiv=document.querySelector('.playerTwoDiv');
-//const playerName=document.querySelector('#playerName');
-let playerNum=[''];
-const btn=document.querySelector('#playerOneBtn')
-btn.addEventListener('click',function(){
-    console.log('ami click')
+btnOne.addEventListener("click", function (){
+    const playerInputField='playerOneInputField';
+    const playerNumber= 2;
+    const previousPlayerDiv='playerOneDiv';
+    const nextPlayerDiv='playerTwoDiv';
+    playerInputNum(playerInputField,playerNumber,previousPlayerDiv,nextPlayerDiv);
+    console.log(playerNum);
 })
 
 
-/* 
 function playerInputNum(inputFieldId,playerNumber,previousPlayerDiv,nextPlayerDiv){
     const playerInputId=document.getElementById(inputFieldId);
     console.log(playerInputId)
@@ -41,4 +40,4 @@ function playerInputNum(inputFieldId,playerNumber,previousPlayerDiv,nextPlayerDi
         }
     }
 
-} */
+} 

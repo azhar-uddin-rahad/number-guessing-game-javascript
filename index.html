@@ -5,15 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .d-none{
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="playerName"></h1>
-    <div class="palyerOneDiv">
+    <h1 id="playerName">Player 1</h1>
+    <div id="playerOneDiv">
         <input type="text" id="playerOneInputField">
         <button id="playerOneBtn">submit</button>
     </div>
+    <div id="playerTwoDiv" class="d-none">
+        <input type="text" id="playerTwoInputField">
+        <button id="playerTwoBtn">submit</button>
+    </div>
+    <div id="playerThreeDiv" class="d-none">
+        <input type="text" id="playerThreeInputField">
+        <button id="playerThreeBtn">submit</button>
+    </div>
+    <div id="playerFourDiv" class="d-none">
+        <input type="text" id="playerFourInputField">
+        <button id="playerFourBtn">submit</button>
+    </div>
     <p id="error"></p>
     
-    <script src="js/script.js"></script>
+    <script src="js/script1.js"></script>
 </body>
 </html>
