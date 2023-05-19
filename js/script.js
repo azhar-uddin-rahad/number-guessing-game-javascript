@@ -10,8 +10,14 @@ playerOneBtn.addEventListener('click',function(){
         if(isNaN(playerOneInputField.value)){
             error.innerHTML=`"${playerOneInputField.value}" This value Not Support Please Type Name`;
         }
+
         else{
-            console.log('Hello world')
+           if(playerOneInputField.value >=1 && playerOneInputField.value<=10){
+
+           }
+           else{
+            error.innerHTML =`This Game Support 1 To 10`;
+           }
         }
     }
 
