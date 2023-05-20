@@ -1,8 +1,11 @@
 const btnOne = document.querySelector("#playerOneBtn");
 const playerName=document.querySelector("#playerName");
 const chance = document.querySelector(".playerChange");
-const error=document.querySelector('#error')
+const error=document.querySelector('#error');
+const btnReset=document.querySelector("#btnReset");
+
 let playerNum=[""];
+
 
 btnOne.addEventListener('click',function(){
     playerInputNum("playerOneInputField",2,"playerOneDiv","playerTwoDiv",true);
@@ -102,20 +105,20 @@ function playerInputNum(
                 playerName.innerHTML = `Wining Player List`;
                 chance.classList.add("d-none");
                 // console.log("I am from if condition" + " " + playerNum) ;
-                console.log(playerNum);
+                // console.log(playerNum);
                 let playerOne = true;
                 playerNum?.map((playerName, index) => {
                   if (playerNum[1] == playerNum[index + 2]) {
                    // console.log("player" + " " + (index + 2));
                     ol.innerHTML += `<li>Player  ${index + 2}</li>`;
                     document.querySelector(".winningPlayerList").classList.remove("d-none");
-    
                     playerOne = false;
                   } else {
                     if (index == playerNum.length - 1 && playerOne) {
                       //console.log("player" + " " + 1);
                       ol.innerHTML = `<li>Player 1</li>`;
                       document.querySelector(".winningPlayerList").classList.remove("d-none");
+
                     }
                   }
                 });
@@ -130,18 +133,21 @@ function playerInputNum(
               playerName.innerHTML = `wining Player List`;
               chance.classList.add("d-none");
               //  console.log("I am from else condition" + " " + playerNum)
+              
               playerNum?.map((playerName, index) => {
                 let playerOne = true;
                 if (playerNum[1] == playerNum[index + 2]) {
                  // console.log("player win" + " " + (index + 2));
                     ol.innerHTML += `<li>player  ${index + 2}</li>`;
                       document.querySelector(".winningPlayerList").classList.remove("d-none");
+
                   playerOne = false;
                 } else {
                   if (index == playerNum.length - 1 && playerOne) {
                    // console.log("player" + " " + 1);
                         ol.innerHTML = `<li>player 1</li>`;
                       document.querySelector(".winningPlayerList").classList.remove("d-none");
+
                   }
                 }
               });

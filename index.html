@@ -9,6 +9,15 @@
         .d-none{
             display: none;
         }
+        .btn-reset{
+            background-color: rgb(156, 102, 247);
+            padding: 5px 10px;
+            font-size: 15px;
+            color: aliceblue;
+            cursor:pointer;
+            border-radius: 5px;
+            border: 2px solid #87c5ff;
+        }
     </style>
 </head>
 <body>
@@ -35,15 +44,27 @@
         <ol id="ol">
 
         </ol>
+        <buttons onclick="reLoadGame()" class="btn-reset">Reset Game</button>
     </div>
     <div class="playerEnterValue d-none">
         <ol id="">
 
 
         </ol>
+        
     </div>
+
+
+    <script>
+        function reLoadGame() {
+            location.reload();
+        }
+    </script>
+    
+    
+    <script src="js/final_Js.js"></script>
+
     
      <!-- <script src="js/script1.js"></script> -->
-    <script src="js/final_Js.js"></script>
 </body>
 </html>
