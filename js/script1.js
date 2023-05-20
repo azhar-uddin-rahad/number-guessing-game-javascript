@@ -18,6 +18,7 @@ const secondInputField = document.querySelector("#playerTwoInputField");
 let fistDiv = document.querySelector("#playerTwoDiv");
 let secondDiv = document.querySelector("#playerThreeDiv");
 let count = 5;
+
 btnTwo.addEventListener("click", function () {
   if (!secondInputField.value) {
     error.innerHTML = "Number Enter on Input Box";
@@ -40,7 +41,8 @@ btnTwo.addEventListener("click", function () {
             chance.classList.add("d-none");
             //   console.log("I am from if condition" + " " + playerNum)
           }
-        } else {
+        }
+         else {
           count = 0;
           chance.innerHTML = `chance ${count}`;
           playerNum.push(secondInputField.value);
@@ -108,6 +110,8 @@ ThirdBtn.addEventListener("click", function () {
     }
   }
 });
+
+
 const ForthInputField = document.querySelector("#playerFourInputField");
 const ForthdBtn = document.querySelector("#playerFourBtn");
 const ForthDiv = document.querySelector("#playerFourDiv");
