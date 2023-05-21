@@ -1,7 +1,12 @@
+
+console.log("script1.js")
+const play1=document.querySelector('#playerEnterValue');
 const btnOne = document.querySelector("#playerOneBtn");
 const btnTwo = document.querySelector("#playerTwoBtn");
 const chance = document.querySelector(".playerChange");
 let playerNum = [""];
+
+ 
 
 btnOne.addEventListener("click", function () {
   playerInputNum(
@@ -29,16 +34,16 @@ btnTwo.addEventListener("click", function () {
       if (secondInputField.value >= 1 && secondInputField.value <= 10) {
         error.innerHTML = "";
         count--;
-        chance.classList.remove("d-none");
+        chance.classList.remove("display-none");
         chance.innerHTML = `chance ${count}`;
         // console.log(count)
         if (count >= 1) {
           if (playerNum[1] == secondInputField.value) {
             playerNum.push(secondInputField.value);
-            fistDiv.classList.add("d-none");
-            secondDiv.classList.remove("d-none");
+            fistDiv.classList.add("display-none");
+            secondDiv.classList.remove("display-none");
             playerName.innerHTML = `player 3`;
-            chance.classList.add("d-none");
+            chance.classList.add("display-none");
             //   console.log("I am from if condition" + " " + playerNum)
           }
         }
@@ -46,18 +51,18 @@ btnTwo.addEventListener("click", function () {
           count = 0;
           chance.innerHTML = `chance ${count}`;
           playerNum.push(secondInputField.value);
-          fistDiv.classList.add("d-none");
-          secondDiv.classList.remove("d-none");
+          fistDiv.classList.add("display-none");
+          secondDiv.classList.remove("display-none");
           playerName.innerHTML = `player 3`;
-          chance.classList.add("d-none");
+          chance.classList.add("display-none");
           //   console.log("I am from else condition" + " " + playerNum)
         }
 
         /* playerNum.push(secondInputField.value);
         error.innerHTML = "";
         playerName.innerHTML = `player ${playerNumber}`;
-        fistDiv.classList.add("d-none");
-        secondDiv.classList.remove("d-none"); */
+        fistDiv.classList.add("display-none");
+        secondDiv.classList.remove("display-none"); */
       } else {
         error.innerHTML = `This Game Support 1 To 10`;
       }
@@ -80,16 +85,16 @@ ThirdBtn.addEventListener("click", function () {
       if (ThirdInputField.value >= 1 && ThirdInputField.value <= 10) {
         error.innerHTML = "";
         chaneforPlayer3rd--;
-        chance.classList.remove("d-none");
+        chance.classList.remove("display-none");
         chance.innerHTML = `chance ${chaneforPlayer3rd}`;
         // console.log(count)
         if (chaneforPlayer3rd >= 1) {
           if (playerNum[1] == ThirdInputField.value) {
             playerNum.push(ThirdInputField.value);
-            threeDiv.classList.add("d-none");
-            fourDiv.classList.remove("d-none");
+            threeDiv.classList.add("display-none");
+            fourDiv.classList.remove("display-none");
             playerName.innerHTML = `player 4`;
-            chance.classList.add("d-none");
+            chance.classList.add("display-none");
 
             // console.log("I am from if condition" + " " + playerNum)
           }
@@ -97,10 +102,10 @@ ThirdBtn.addEventListener("click", function () {
           chaneforPlayer3rd = 0;
           chance.innerHTML = `chance ${chaneforPlayer3rd}`;
           playerNum.push(ThirdInputField.value);
-          threeDiv.classList.add("d-none");
-          fourDiv.classList.remove("d-none");
+          threeDiv.classList.add("display-none");
+          fourDiv.classList.remove("display-none");
           playerName.innerHTML = `player 4`;
-          chance.classList.add("d-none");
+          chance.classList.add("display-none");
 
           //console.log("I am from else condition" + " " + playerNum)
         }
@@ -127,59 +132,47 @@ ForthdBtn.addEventListener("click", function () {
       if (ForthInputField.value >= 1 && ForthInputField.value <= 10) {
         error.innerHTML = "";
         chaneforPlayer4th--;
-        chance.classList.remove("d-none");
+        chance.classList.remove("display-none");
         chance.innerHTML = `chance ${chaneforPlayer4th}`;
         //  console.log(count)
         if (chaneforPlayer4th >= 1) {
-            const ol = document.querySelector("#ol");
+          const ol = document.querySelector("#ol");
           if (playerNum[1] == ForthInputField.value) {
-            playerNum.push(ForthInputField.value);
-            ForthDiv.classList.add("d-none");
-            //fourDiv.classList.remove("d-none");
+            playerNum.push(ForthInputField.value);  
+            ForthDiv.classList.add("display-none");
+            //fourDiv.classList.remove("display-none");
             playerName.innerHTML = `wining Player List`;
-            chance.classList.add("d-none");
+            chance.classList.add("display-none");
             // console.log("I am from if condition" + " " + playerNum) ;
             console.log(playerNum);
             let playerOne = true;
+            play1.classList.remove("display-none");
             playerNum?.map((playerName, index) => {
               if (playerNum[1] == playerNum[index + 2]) {
-               // console.log("player" + " " + (index + 2));
+                play1.classList.add("display-none");
                 ol.innerHTML += `<li>player  ${index + 2}</li>`;
-                document.querySelector(".winningPlayerList").classList.remove("d-none");
-
-                playerOne = false;
-              } else {
-                if (index == playerNum.length - 1 && playerOne) {
-                  //console.log("player" + " " + 1);
-                  ol.innerHTML = `<li>player 1</li>`;
-                  document.querySelector(".winningPlayerList").classList.remove("d-none");
-                }
-              }
+                document.querySelector(".winningPlayerList").classList.remove("display-none");
+              } 
+              
+              
             });
           }
         } else {
           chaneforPlayer4th = 0;
           chance.innerHTML = `chance ${chaneforPlayer4th}`;
           playerNum.push(ForthInputField.value);
-          ForthDiv.classList.add("d-none");
-          //fourDiv.classList.remove("d-none");
+          ForthDiv.classList.add("display-none");
           playerName.innerHTML = `wining Player List`;
-          chance.classList.add("d-none");
-          //  console.log("I am from else condition" + " " + playerNum)
+          chance.classList.add("display-none"); 
+          console.log(playerNum);
+          play1.classList.remove("display-none");
           playerNum?.map((playerName, index) => {
-            let playerOne = true;
             if (playerNum[1] == playerNum[index + 2]) {
-             // console.log("player win" + " " + (index + 2));
+                play1.classList.add("display-none");
                 ol.innerHTML += `<li>player  ${index + 2}</li>`;
-                  document.querySelector(".winningPlayerList").classList.remove("d-none");
-              playerOne = false;
-            } else {
-              if (index == playerNum.length - 1 && playerOne) {
-               // console.log("player" + " " + 1);
-                    ol.innerHTML = `<li>player 1</li>`;
-                  document.querySelector(".winningPlayerList").classList.remove("d-none");
-              }
-            }
+                  document.querySelector(".winningPlayerList").classList.remove("display-none");
+            }   
+            
           });
         }
       } else {
@@ -211,8 +204,8 @@ function playerInputNum(
         }
         error.innerHTML = "";
         playerName.innerHTML = `player ${playerNumber}`;
-        firstPlayerDiv.classList.add("d-none");
-        secondPlayerDiv.classList.remove("d-none");
+        firstPlayerDiv.classList.add("display-none");
+        secondPlayerDiv.classList.remove("display-none");
       } else {
         error.innerHTML = `This Game Support 1 To 10`;
       }

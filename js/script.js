@@ -31,8 +31,8 @@ function playerInputNum(inputFieldId,playerNumber,previousPlayerDiv,nextPlayerDi
             playerNum.push(playerInputId.value);
             error.innerHTML='';
             playerName.innerHTML= `player ${playerNumber}`;
-            firstPlayerDiv.classList.add('d-none');
-            secondPlayerDiv.classList.remove('d-none');
+            firstPlayerDiv.classList.add('display-none');
+            secondPlayerDiv.classList.remove('display-none');
 
            }
            else{
